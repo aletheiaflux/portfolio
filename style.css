@@ -1,54 +1,39 @@
-/* Сбрасываем все отступы и задаем серый фон */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    width: 100%;
+body {
+    background-color: #2a2a2a; /* Серый фон */
     min-height: 100vh;
-    background-color: #2a2a2a; /* Темно-серый фон по бокам */
-    font-family: sans-serif;
-}
-
-/* Контейнер центрирует изображение и задает фоновый цвет */
-.container {
     display: flex;
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: flex-start; /* Выравниваем по верху */
-    min-height: 100vh;
-    padding: 20px; /* Отступы от краев экрана на мобильных */
+    justify-content: center;
+    align-items: flex-start;
 }
 
-/* Основные стили изображения */
-.fullscreen-image {
-    display: block;
-    max-width: 100%; /* Никогда не будет шире своей оригинальной ширины */
-    height: auto;    /* Сохраняет пропорции */
+.image-wrapper {
+    max-width: 100%;
+    padding: 20px;
+    display: inline-block; /* Контейнер подстраивается под изображение */
+}
+
+#main-image {
+    display: block; /* Убирает лишние отступы */
     
-    /* Тень для лучшего визуального отделения от фона */
+    /* КРИТИЧЕСКИ ВАЖНОЕ ПРАВИЛО: */
+    max-width: 100%; /* Никогда не будет шире своего контейнера */
+    width: auto;     /* Ширина вычисляется автоматически */
+    height: auto;    /* Высота вычисляется автоматически */
+    
+    /* Визуальные улучшения */
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-    
-    /* Плавное изменение размера при изменении окна браузера */
-    transition: max-width 0.3s ease;
+    border-radius: 2px;
 }
 
-/* На очень широких экранах ограничиваем максимальную ширину */
-@media (min-width: 1920px) {
-    .fullscreen-image {
-        max-width: 90%; /* На огромных экранах оставляем больше фона по бокам */
-    }
-}
-
-/* На мобильных устройствах - картинка на всю ширину с небольшими отступами */
-@media (max-width: 768px) {
-    .container {
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .image-wrapper {
         padding: 10px;
-        align-items: center; /* На мобильных центрируем и по вертикали */
-    }
-    
-    .fullscreen-image {
-        width: 100%; /* На мобильных используем всю доступную ширину */
     }
 }
