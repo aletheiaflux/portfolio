@@ -4,18 +4,21 @@
 }
 
 body {
-    background-color: #F4F4F4;
+    background-color: #F9F9F9; /* Светлый фон */
     display: flex;
     justify-content: center;
     min-height: 100vh;
 }
 
 .image-wrapper {
-    /* Рамок нет - контейнер вплотную к картинке */
+    /* Контейнер для центрирования */
 }
 
 img {
     display: block;
     max-width: 100%;
     height: auto;
+    
+    /* Легкая тень */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
