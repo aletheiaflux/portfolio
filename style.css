@@ -1,39 +1,21 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    background-color: #2a2a2a; /* Серый фон */
-    min-height: 100vh;
+    background-color: #F4F4F4;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    min-height: 100vh;
 }
 
 .image-wrapper {
+    /* Рамок нет - контейнер вплотную к картинке */
+}
+
+img {
+    display: block;
     max-width: 100%;
-    padding: 20px;
-    display: inline-block; /* Контейнер подстраивается под изображение */
-}
-
-#main-image {
-    display: block; /* Убирает лишние отступы */
-    
-    /* КРИТИЧЕСКИ ВАЖНОЕ ПРАВИЛО: */
-    max-width: 100%; /* Никогда не будет шире своего контейнера */
-    width: auto;     /* Ширина вычисляется автоматически */
-    height: auto;    /* Высота вычисляется автоматически */
-    
-    /* Визуальные улучшения */
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-    border-radius: 2px;
-}
-
-/* Для очень маленьких экранов */
-@media (max-width: 480px) {
-    .image-wrapper {
-        padding: 10px;
-    }
+    height: auto;
 }
